@@ -1,4 +1,4 @@
-var vg_1 = "melb_housing_price_unit.vg.json"
+var vg_1 = "melb_housing_price.vg.json"
 
 vegaEmbed("#map",map_1).then(function(result) { 
 
