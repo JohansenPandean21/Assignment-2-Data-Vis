@@ -5,7 +5,7 @@
   "height": 600,
   "projection": {"type": "equirectangular"},
   "data": {
-  "url": "https://raw.githubusercontent.com/JohansenPandean21/Assignment-2-Data-Vis/main/json/melb%20suburb-2.json",
+  "url": "https://raw.githubusercontent.com/JohansenPandean21/Assignment-2-Data-Vis/main/js/melb%20suburb-2.json",
       "format": {"type": "topojson", "feature": "melb suburb"}
     },
     "transform": [
@@ -33,6 +33,6 @@
   },
 
     "tooltip": [
-  {"field": "properties.LOC_NAME", "type": "nominal", "title": "Avg_Price_Land"},
-  {"field": "Avg_Price_Land", "type": "quantitative"} ]
+  {"field": "Avg_Price_Room", "type": "quantitative","format": ","} ,
+  {"field" : "Avg_Price_Land", "type":"quantitative", "format": ","}]
   } }
