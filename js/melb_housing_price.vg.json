@@ -16,7 +16,7 @@
             "url": "https://raw.githubusercontent.com/JohansenPandean21/Assignment-2-Data-Vis/main/Melbourne_Pricing_House.csv"
           },
           "key": "Suburb",
-          "fields": ["Avg_Price_Room"]
+          "fields": ["Avg_Price_Room","Suburb"]
   } 
 }
 ],
@@ -25,6 +25,7 @@
     "color": {
       "field": "Avg_Price_Room",
       "type": "quantitative",
+      "title" : "Average Room Price ($)",
       "scale" : {
         "type" : "threshold",
         "domain" : [100000,200000,400000,600000,800000,1000000,1200000],
@@ -33,6 +34,7 @@
   },
 
     "tooltip": [
-  {"field": "Avg_Price_Room", "type": "quantitative","format": ","} ,
-  {"field" : "Avg_Price_Land", "type":"quantitative", "format": ","}]
+    {"field" : "Suburb", "type":"nominal"},
+    {"field": "Avg_Price_Room", "type": "quantitative","format": "$","Name" : "Price Room Average in $"} 
+  ]
   } }
