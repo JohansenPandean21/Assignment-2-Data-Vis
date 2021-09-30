@@ -1,40 +1,86 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json", 
   "title": "Melbourne Housing Price Per Room ",
-  "width": 800,
+  "width": 600,
   "height": 600,
   "projection": {"type": "equirectangular"},
-  "data": {
+  
+  "data": 
+  {
   "url": "https://raw.githubusercontent.com/JohansenPandean21/Assignment-2-Data-Vis/main/js/melb%20suburb-2.json",
       "format": {"type": "topojson", "feature": "melb suburb"}
-    },
-    "transform": [
+  },
+
+  "transform": [ 
       {
-  "lookup": "properties.LOC_NAME",
-        "from": {
-          "data": {
-            "url": "https://raw.githubusercontent.com/JohansenPandean21/Assignment-2-Data-Vis/main/Melbourne_Pricing_House.csv"
-          },
-          "key": "Suburb",
-          "fields": ["Avg_Price_Room","Suburb"]
-  } 
-}
-],
+          "lookup": "properties.LOC_NAME",
+          "from":{
+              "data":{
+                  "url" : "https://raw.githubusercontent.com/JohansenPandean21/Assignment-2-Data-Vis/main/Melbourne_Pricing_House.csv"
+              },
+              "key": "Suburb",
+              "fields": ["Avg_Price_Room","Month","Suburb", "Distance", "Type"]
+          }
+      },
+      {"filter": "datum.Distance > Dist_range"},
+      {"filter": "unit_type == null || datum.Type == unit_type"}
+  ],
+
+  "params" : [
+    {
+      "name": "unit_type",
+      "bind":{
+        "input": "select",
+        "options":[
+          null,
+          "h",
+          "t",
+          "u"
+        ],
+        "labels":[
+          "Show All",
+          "House",
+          "Townhouse",
+          "Unit"
+        ],
+        "name": "Select Unit Type: "
+      }
+    },
+    {
+      "name": "Dist_range",
+      "value": 0,
+      "bind": { 
+        "input": "range",
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "name": "Minimum Distance From CBD Area (Km): "
+      }
+    }
+    
+  ],
+  
+
+
+
   "mark": {"type": "geoshape"},
   "encoding": {
     "color": {
       "field": "Avg_Price_Room",
       "type": "quantitative",
-      "title" : "Average Room Price ($)",
+      "title" : "Average Price per Room ($)",
       "scale" : {
         "type" : "threshold",
         "domain" : [200000,400000,600000,800000,1000000,1200000],
         "range" : ["#c6dbef", "#9ecae1", "#6baed6", "#4292c6","#2171b5","#084594"]
-      }
+      },
+      "legend": {"format": ".3s"}
   },
 
     "tooltip": [
     {"field" : "Suburb", "type":"nominal"},
-    {"field": "Avg_Price_Room", "type": "quantitative","format": "$","Name" : "Price Room Average in $"} 
+    {"field": "Avg_Price_Room", "type": "quantitative","format": "$.4s","title" : "Price Room Average in $"},
+    {"field": "Distance", "type": "quantitative","title": "Distance From CBD in Km"}
   ]
-  } }
+  } 
+}

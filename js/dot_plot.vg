@@ -1,0 +1,77 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json", 
+    "width" : 500,
+    "height" : 400,
+    "title": " HAVENT THINK OF A GOOD TITLE FOR THIS",
+    "data" :{ 
+        "url": "https://raw.githubusercontent.com/JohansenPandean21/Assignment-2-Data-Vis/main/Melbourne_Pricing_House.csv"
+    },
+    "transform": [
+        {"filter": "datum.YearBuilt > 1800"},
+        {"filter": "datum.Landsize > 0 "},
+        {"filter":"No_room == null || datum.Rooms == No_room"}
+    ],
+
+    "selection": {
+        "Unit_types":{
+            "type":"multi",
+            "fields":["Type"],
+            "bind":{"legend": "dblclick"}
+        }
+    },
+    "params":[
+        {
+            "name":"No_room",
+            "bind":{
+                "input":"select",
+                "options":[
+                    null,
+                    "1","2","3","4","5","6"
+                ],
+                "labels":[
+                    "Show All",
+                    "1","2","3","4","5","6"
+                ],
+                "name":"Select Number of Rooms: "
+            }
+        }
+    ],
+
+    "mark" : "circle",
+    "encoding": { 
+        "x" : {
+            "field" : "YearBuilt",
+            "type": "quantitative",
+            "title": "Year Built",
+            "axis": {"tickCount": 7},
+            "scale": {"domain": [1700,2020]}
+        },
+        "y": { 
+            "field": "Price",
+            "type": "quantitative",
+            "axis": {"minExtent" : 30},
+            "scale":{"zero": false}
+        },
+        "color": {
+            "field": "Type",
+            "type": "nominal",
+            "title": "Room Type",
+            "legend": {"labelExpr": "{'h': 'House', 't':'Townhouse', 'u' :'Unit'}[datum.label]"}
+        },
+        "opacity": { 
+           "condition": {"selection": "Unit_types", "value" : 1},
+            "value" : 0.2
+        },
+        "size": {
+            "field": "Landsize",
+            "type": "quantitative",
+            "scale": {
+                "type": "threshold",
+                "domain": [500,1000,5000,10000,150000,20000,30000],
+                "range": [10,50,150,200,300,400]
+            },
+            "legend": {"format": ".1s"}
+        }
+    }
+
+}
