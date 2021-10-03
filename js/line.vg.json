@@ -1,0 +1,88 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/JohansenPandean21/Assignment-2-Data-Vis/main/Melbourne_Pricing_House.csv"
+    },
+    "width": 500,
+    "height": 300,
+    "padding":5,
+    "title": "EVOLUTION OF UNITS SOLD",
+    "layer": [
+      {
+        "encoding": {
+          "x": { "timeUnit" : "yearmonthdate",
+            "field":"Date",
+            "type":"temporal", 
+            "axis":{
+                "domain": false,
+                "tickSize": 0 
+            }, "title": ""},
+          "y": {"field": "no_sold_pr", "type": "quantitative", "title":"Unit Sold"},
+          "color": {"field": "Regionname", "type": "nominal","title" : "Region Name"}
+        },
+        "layer": [
+          {"mark": "line"},
+          {
+            "params": [{
+              "name": "label",
+              "select": {
+                "type": "point",
+                "encodings": ["x"],
+                "nearest": true,
+                "on": "mousemove"
+              }
+            }],
+            "mark": "point",
+            "encoding": {
+              "opacity": {
+                "condition": {
+                  "param": "label",
+                  "empty": false,
+                  "value": 1
+                },
+                "value": 0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "transform": [{"filter": {"param": "label", "empty": false}},
+        {"filter":"datum.Regionname !== 'undefined'"}],
+        "layer": [
+          {
+            "mark": {"type": "rule", "color": "gray"},
+            "encoding": {
+              "x": {"type": "temporal", "field": "Date", "aggregate": "min"}
+            }
+          },
+          {
+            "encoding": {
+              "text": {"type": "quantitative", "field": "no_sold_pr"},
+              "x": {"type": "temporal", "field": "Date"},
+              "y": {"type": "quantitative", "field": "no_sold_pr"}
+            },
+            "layer": [
+              {
+                "mark": {
+                  "type": "text",
+                  "stroke": "white",
+                  "strokeWidth": 2,
+                  "align": "left",
+                  "dx": 5,
+                  "dy": -5
+                }
+              },
+              {
+                "mark": {"type": "text", "align": "left", "dx": 5, "dy": -5},
+                "encoding": {
+                "x":{"field":"Date","type":"temporal"},
+                  "color": {"type": "nominal", "field": "Regionname"}
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
