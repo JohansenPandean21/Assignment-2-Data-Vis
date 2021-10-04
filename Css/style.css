@@ -6,13 +6,14 @@
     padding: 50px;
     padding-top: 10px;
     font-family: 'Source Sans Pro', sans-serif;
+    background-color: rgb(119, 240, 234);
 }
 
 /* Border Line */
 .hr3{ 
     border: 0; 
     height: 2px;
-    background-image: linear-gradient(to right, transparent, #DDD, transparent);
+    background-image: linear-gradient(to right, transparent, rgb(221, 221, 221), transparent);
     padding-top: 5px;
 }
 
@@ -25,6 +26,16 @@ body{
     background-color : powderblue;
 }
 
+h2{
+    font-size: 20px;
+    background-color: whitesmoke;
+}
+/* Heading 1*/
+h1{
+    font-family:'Ephesis' ;
+}
+
+
 /* Text Alignment in HTML */ 
 
 #l-align { 
@@ -32,8 +43,10 @@ body{
     border: 1px solid black;
 }
 
-#c-align {
+.c-align {
     text-align: center; 
+    margin:auto;
+    width:50%;
     border: 1 px solid black; 
 }
 
@@ -42,3 +55,4 @@ body{
     border:1 px solid black; 
 }
 
+/* Setting Font Size*/
