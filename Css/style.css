@@ -1,3 +1,22 @@
+/* Page Settings*/
+.page{ 
+    width: 1024px;
+    background-color: white;
+    margin: auto;
+    padding: 50px;
+    padding-top: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Border Line */
+.hr3{ 
+    border: 0; 
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, #DDD, transparent);
+    padding-top: 5px;
+}
+
+
 .vis-container{
     width : 100%;
 }
@@ -5,3 +24,21 @@
 body{
     background-color : powderblue;
 }
+
+/* Text Alignment in HTML */ 
+
+#l-align { 
+    text-align: left;
+    border: 1px solid black;
+}
+
+#c-align {
+    text-align: center; 
+    border: 1 px solid black; 
+}
+
+#r-align {
+    text-align: right;
+    border:1 px solid black; 
+}
+
