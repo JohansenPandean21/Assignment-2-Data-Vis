@@ -1,0 +1,58 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json", 
+    "title": "HAVENT THINK ON A GOOD TITLE YET",
+    "width": 400,
+    "height": 200,
+    "padding": 0,
+    "data":{
+        "url":"https://raw.githubusercontent.com/JohansenPandean21/Assignment-2-Data-Vis/main/Melbourne_Pricing_House.csv"
+    },
+    "transform":[
+        {"filter":"month_select == null || datum.Month == month_select"}
+    ],
+    "params":[
+        {
+            "name":"month_select",
+            "bind":{
+                "input":"select",
+                "options":[
+                    null,
+                    "1","2","3","4","5","6","7","8","9","10","11","12"
+                ],
+                "labels":[
+                    "Show All",
+                    "January (NO DATA)",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September",
+                    "Ocotber",
+                    "November",
+                    "December"
+                ],
+                "name": "Select Month: "
+            }
+        }
+    ],
+    
+    "mark":{
+        "type": "bar"
+    },
+    "encoding":{
+        "column":{"field":"Year"},
+        "x":{"field":"No_sold","type":"quantitative","aggregate":"sum","title": "Unit Sold"},
+        "y":{"field":"Method","type":"nominal"},
+        "color":{"field":"Type","type":"nominal",
+            "legend": {"labelExpr": "{'h': 'House', 't':'Townhouse', 'u' :'Unit'}[datum.label]"}},
+        
+        "tooltip":[
+            {"field":"No_sold","type":"quantitative","aggregate":"sum", "title": "Total Units Sold", "format":","},
+            {"field":"Method","type":"nominal","title":"Selling Method"},
+            {"field":"Type","type":"nominal","title": "Unit Type"}
+        ]
+    }
+}

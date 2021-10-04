@@ -1,0 +1,96 @@
+{
+   "$schema" : "https://vega.github.io/schema/vega-lite/v5.json", 
+   "width": 600,
+   "height": 600,
+    "title": "Melbourne Housing",
+    "projection" : {"type": "equirectangular"},
+    "layer":[
+        {
+            "data":{
+                "url": "https://raw.githubusercontent.com/JohansenPandean21/Assignment-2-Data-Vis/main/js/melb%20suburb-2.json",
+                "format": {"type": "topojson", "feature": "melb suburb"}
+            },
+        "mark": {"type": "geoshape", "fill": "lightgray", "stroke":"white"}
+        },
+
+        {
+            "data":{
+                "url": "https://raw.githubusercontent.com/JohansenPandean21/Assignment-2-Data-Vis/main/Melbourne_Pricing_House.csv"
+            },
+            "mark" : {"type": "circle", "tooltip":{"content":"data"}},
+            "transform": [
+                {"filter": "Unit_select == null || datum.Type   == Unit_select"},
+                {"filter": "Month_select == null || datum.Month == Month_select"},
+                {"filter": "datum.Avg_Price_Room > Price_above"}
+            ],
+
+            "encoding": {
+                "longitude":{"field": "Longtitude", "type":"quantitative"},
+                "latitude": {"field": "Lattitude", "type": "quantitative"},
+                "color": { 
+                    "field": "Type",
+                    "type": "nominal"
+                }
+            }
+        }
+    ],
+    "params" : [
+        {
+            "name": "Unit_select",
+            "bind": {
+                "input": "select",
+                "options": [
+                    null,
+                    "h",
+                    "t",
+                    "u"
+                ],
+                "labels": [ 
+                    "Show All",
+                    "House",
+                    "Townhouse",
+                    "Unit"
+                ],
+                "name": "Unit Type Selection: "
+            }
+        },
+        {
+            "name": "Price_above",
+            "value": 0,
+            "bind": { 
+              "input": "range",
+              "min": 0,
+              "max": 1200000,
+              "step": 500,
+              "name": "Price Range: "
+            }
+          },
+          {
+            "name": "Month_select",
+            "bind":{
+              "input": "select",
+              "options":[
+                null, "1","2","3","4","5","6","7","8","9","10","11","12"
+              ],
+              "labels":[
+                "Show All",
+                "January (NO DATA)",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+              ],
+              "name": "Month Selection: "
+            }
+          }
+    ]
+    
+    
+}
