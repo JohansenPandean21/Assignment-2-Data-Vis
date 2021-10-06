@@ -39,10 +39,10 @@
     <hr class = "hr3">
     
     
-    <h2 class= "c-align"> Stacked Bar Chart </h2>
+    <h2 class= "c-align"> Bubble Plot Visualisation </h2>
     <div class="pure-g">
-        <div class="pure-u-1-1">
-            <div id="Stacked_bar" class="vis-container"></div>
+        <div class="c-align">
+            <div id="bubble_plot" class="vis-container"></div>
         </div>
     </div>
     
@@ -56,8 +56,8 @@
         var vega1 = "js/Empty_data_map.vg.json";
         vegaEmbed("#choropleth_map",vega1);
 
-        var vega2 = "js/line.vg.json";
-        vegaEmbed("#line_chart",vega2);
+        var vega2 = "js/bubble_plot.vg.json";
+        vegaEmbed("#bubble_plot",vega2);
 
 
         var vega3 = "js/Stacked_bar.vg.json";
