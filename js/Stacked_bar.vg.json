@@ -80,8 +80,7 @@
                 "fontStyle": "italic"
             },
             "encoding":{
-                "text":{"field":"new_count_prop","type":"quantitative","aggregate":"count"},
-                "detail":{"field":"Type"}
+                "text":{"field":"new_count_prop","type":"quantitative"}
             }
         }
 
