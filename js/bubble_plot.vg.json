@@ -1,0 +1,137 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json", 
+    "width": 500,
+    "height":400,
+    "title": "Melbourne Housing Price Based on Year Built",
+    "data":{
+        "url":"https://raw.githubusercontent.com/JohansenPandean21/Assignment-2-Data-Vis/main/Melbourne_Pricing_House.csv"
+    },
+    "params": [ 
+    
+        { 
+            "name": "No_rooms",
+            "bind":{
+                "input":"select",
+                "options":[
+                    null,"1","2","3","4","5","6","7","8","10"
+                ],
+                "labels":[
+                    "Show All","1","2","3","4","5","6","7","8","10"
+                ],
+                "name": "Select Number of Rooms: "
+            }
+        },
+
+        {
+            "name":"No_bathroom",
+            "bind":{
+                "input":"select",
+                "options":[
+                    null,"1","2","3","4","5","6","7","8"
+                ],
+                "labels":[
+                    "Show All","1","2","3","4","5","6","7","8"
+                ],
+                "name": "Select Number of Bathrooms: "
+            }
+        }
+        
+    ],
+
+    "transform":[
+        {"filter": "No_rooms == null || datum.Rooms == No_rooms"},
+        {"filter":"No_bathroom == null || datum.Bathroom == No_bathroom"},
+        {"filter":"year(datum.YearBuilt) > 1800"}
+    ],
+
+    "encoding":{
+        "y":{
+            "field": "Price",
+            "type":"quantitative",
+            "title":"Price ($)",
+            "axis":{"tickCount" : 7},
+            "scale":{"domain":[0,10000000]}
+        },
+        "x":{
+            "field" : "YearBuilt",
+            "type":"temporal",
+            "axis":{"tickCount" : 6},
+            "scale":{"domain":[{"year":1800},{"year":2020}]}
+            
+        }
+    },
+
+    "layer":[
+        {
+            "selection":{
+                "legend_bind":{
+                    "type":"multi",
+                    "fields":["Type"],
+                    "bind": {"legend":"dblclick"}
+                },
+                "paintbrush":{
+                    "type":"point",
+                    "fields":"Type",
+                    "on":"mousemove",
+                    "nearest":true               }
+            },
+            "mark":"circle",
+            "encoding":{
+                "size":{
+                    "field":"Landsize",
+                    "type":"quantitative",
+                    "legend":{"format": ".1s"},
+                    "scale":{
+                        "type":"threshold",
+                        "domain":[500,1000,5000,10000,20000,30000],
+                        "range":[10,50,150,300,400,500]
+                    }
+                },
+                "color":{
+                    
+                    "condition":{
+                        "selection":"paintbrush",
+                        "field":"Type",
+                        "type":"nominal"    
+                    },
+                    "value":"grey"
+                    
+                      
+                },
+                "opacity": { 
+                    "condition": {"selection": "legend_bind", "value": 0.6},
+                    "value": 0.1
+                    
+                },
+                "tooltip": [ 
+                    {"field": "Type", "type":"nominal"},
+                    {"field":"Price","type":"quantitative","format":".3s"},
+                    {"field":"YearBuilt","type":"temporal"},
+                    {"field":"Landsize","type":"quantitative"},
+                    {"field":"Rooms","type":"quantitative","title":"Number of Rooms"},
+                    {"field":"Bathroom","type":"quantitative","title":"Number of Bathroom"}
+                ]
+            }
+        },
+        {
+            "mark":{
+                "type":"text",
+                "align":"right",
+                "baseline":"middle",
+                "dx":-12,
+                "fontSize": 11.5,
+                "fontStyle":"italic"
+            },
+            "encoding":{
+                "text":{"field":"Suburb","type":"nominal"},
+                "color":{"value":"black"},
+                "opacity":{
+                    "condition":{
+                        "test":"datum['Price'] > 7000000", "value": 1
+                    }, 
+                    "value" :0
+                }
+            }
+        }
+    ]
+}

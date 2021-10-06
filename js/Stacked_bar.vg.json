@@ -10,7 +10,7 @@
     "transform":[
         {"filter":"month_select == null || datum.Month == month_select"}
     ],
-    "params":[
+     "params":[
         {
             "name":"month_select",
             "bind":{
@@ -38,21 +38,78 @@
             }
         }
     ],
-    
-    "mark":{
-        "type": "bar"
-    },
+
+
     "encoding":{
-        "column":{"field":"Year"},
-        "x":{"field":"No_sold","type":"quantitative","aggregate":"sum","title": "Unit Sold"},
-        "y":{"field":"Method","type":"nominal"},
-        "color":{"field":"Type","type":"nominal",
-            "legend": {"labelExpr": "{'h': 'House', 't':'Townhouse', 'u' :'Unit'}[datum.label]"}},
-        
-        "tooltip":[
-            {"field":"No_sold","type":"quantitative","aggregate":"sum", "title": "Total Units Sold", "format":","},
-            {"field":"Method","type":"nominal","title":"Selling Method"},
-            {"field":"Type","type":"nominal","title": "Unit Type"}
-        ]
+       
+        "x":{"field":"No_sold",
+            "type":"quantitative",
+            "aggregate":"sum",
+            "title": "Unit Sold"
+        },
+        "y":{"field":"Method",
+            "type":"nominal"
+        }
+    },
+    
+    "layer":[
+        {
+            "mark":"bar",
+            "height":300,
+            "Width":300,
+            "encoding":{
+                "color":{"field":"Type",
+                    "type":"nominal",
+                    "legend": {"labelExpr": "{'h': 'House', 't':'Townhouse', 'u' :'Unit'}[datum.label]"}},
+                
+                "tooltip":[
+                    {"field":"No_sold","type":"quantitative","aggregate":"sum", "title": "Total Units Sold", "format":","},
+                    {"field":"Method","type":"nominal","title":"Selling Method"},
+                    {"field":"Type","type":"nominal","title": "Unit Type"}
+                ]
+         
+            }
+        },
+        {
+            "mark":{
+                "type":"text",
+                "align": "right",
+                "baseline": "middle",
+                "dx": 20,
+                "fontSize": 11.5,
+                "fontStyle": "italic"
+            },
+            "encoding":{
+                "text":{"field":"new_count_prop","type":"quantitative","aggregate":"count"},
+                "detail":{"field":"Type"}
+            }
+        }
+
+    ],
+    "config": {
+        "font": "Space Grotesk",
+        "axis": {
+            "labelFontSize": 13,
+            "titleFontSize": 15
+        },
+        "title": {
+            "anchor": "middle",
+            "fontSize": 16,
+            "font": "Segoe UI",
+            "fontWeight": 600
+        },
+        "legend": {
+            "titleFontSize": 15,
+            "labelFontSize": 13,
+            "orient": "none",
+            "direction": "horizontal",
+            "legendX": 50,
+            "legendY": 350,
+            "titleAnchor": "start",
+            "titleOrient": "left"
+        }
+
     }
+  
+    
 }
