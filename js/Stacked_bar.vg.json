@@ -69,19 +69,6 @@
                 ]
          
             }
-        },
-        {
-            "mark":{
-                "type":"text",
-                "align": "right",
-                "baseline": "middle",
-                "dx": 20,
-                "fontSize": 11.5,
-                "fontStyle": "italic"
-            },
-            "encoding":{
-                "text":{"field":"new_count_prop","type":"quantitative"}
-            }
         }
 
     ],
