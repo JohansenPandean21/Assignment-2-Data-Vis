@@ -16,40 +16,88 @@
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Akronim&family=Fira+Sans:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Akronim&family=Fira+Sans:ital,wght@1,600&family=Noto+Sans+Display:wght@300&display=swap" rel="stylesheet">
+
 
     <!-- Css File-->
     <link rel="stylesheet" type="text/css" href = "Css/style.css" media="all">
 </head>
 
 <body>
-    <div class="page">
-            <h1 class = "c-align" font-size : 20px> Visualisation 1</h1>
+    <div class = "page">
+        <h1 style = "color:antiquewhite" > Melbourne Housing Price</h1>
+    
+    
+            <div class = l-align> 
+                <h2> Map</h2>
+            </div>
             <!-- Pure grid group-->
-            <div class = "c-align">
+            <div >
                 <div class = "pure-u-1-1">
-                <div id = "choropleth_map" class = "vis-container"></div>
+                <div id = "choropleth_map" class = "div_map"></div>
                 </div>
+                <p id = "p1">  helo trying </p>
             </div>
     
 
     <br>
-  
+            
 
 
     <hr class = "hr3">
     
     
     <h2 class= "c-align"> Bubble Plot Visualisation </h2>
-    <div class="pure-g">
-        <div class="c-align">
-            <div id="bubble_plot" class="vis-container"></div>
+    
+    <div class = "pure-g">
+    <div class = "pure-u-1-3">
+        <div class = "description description-right">
+            <h3> helo</h3>
+            <p>jelo</p>
         </div>
     </div>
+    <div class="pure-u-2-3">
+        <div id="bubble_plot" class = "div_map"></div>
+    </div>
+    </div>
+
+
     
 
     <br>
 
+
+    <hr class = "hr3">
+
+    <h2 class = "c-align"> Line chart</h2>
+    <div class = "pure-g">
+        <div class >
+            <div id = "line_chart" class = "vis-container"></div>
+        </div>
     </div>
+
+
+    <br>
+
+
+    <hr class = "hr3">
+
+    <h2 class= "c-align"> Bubble Plot Visualisation </h2>
+    
+    <div class = "pure-g">
+        <div class="pure-u-2-3">
+            <div id="Stacked_bar" class = "div_map"></div>
+        </div>
+    <div class = "pure-u-1-3">
+        <div class = "description description-right">
+            <h3> helo</h3>
+            <p>jelo</p>
+        </div>
+    </div>
+    
+    </div>
+
 
 
     <script type = "text/javascript">
@@ -62,6 +110,9 @@
 
         var vega3 = "js/Stacked_bar.vg.json";
         vegaEmbed("#Stacked_bar",vega3);
+
+        var vega4 = "js/line.vg.json";
+        vegaEmbed("#line_chart", vega4);
     </script>
 </body>
 </html>
