@@ -48,11 +48,17 @@ body{
 /* ---------------------------------------------------------------------- */
 .pure-g{
     margin-bottom: 25px;
+    margin-top:25px;
 }
 
 /* Div Container Size*/
 .div_map{ 
     width: 100%;
+    height:100%;
+}
+.div_head{
+    width:100%;
+    
 }
 
 /* Background for paragraph*/
@@ -72,18 +78,30 @@ body{
     padding-left : 20px;
 }
 
+.logo{
+    width: 100px;
+        }
+    
+    .logo img{
+    float: left;
+    margin-left: 0px 0px 0px 30px;
+    width: 150px;
+    height: 38px;
+    }
+
 /* ---------------------------------------------------------------------- */
 /* Text Alignment in HTML */ 
 
 .l-align { 
     text-align: left;
+    margin: auto;
     border: 1px solid black;
 }
 
 .c-align {
     text-align: center; 
     margin:auto;
-    width:50%;
+    width:100%;
     border: 1 px solid black; 
 }
 
@@ -91,5 +109,25 @@ body{
     text-align: right;
     border:1 px solid black; 
 }
-
+/* ---------------------------------------------------------------------- */
 /* Setting Font Size*/
+
+
+/* SELECTION/BINDING PARAMETERS */
+.vega-bind-name{
+    font-family: 'Fira Sans', sans-serif;
+    margin-left:50px;
+    font-size: 12px;
+}
+/* ---------------------------------------------------------------------- */
+/* Bold Text*/
+.bold{
+    font-weight: bold;
+}
+
+/* ---------------------------------------------------------------------- */
+/* POSITIONING */
+#pos1 { 
+    position: absolute;
+    left: 50;
+}
