@@ -24,8 +24,7 @@
         "y":{"field":"count_number", 
         "type":"quantitative",
         "title":"Property Sold"
-            },
-            "text":{"field":"count_number","type":"quantitative"}
+            }
     },
     "transform":[
         {
@@ -43,10 +42,13 @@
             "mark":{
                 "type":"text",
                 "align":"right",
-                "dx":-5,
-                "stroke":"white",
+                "dx":2,
                 "strokeWidth":5
-            }
+            },
+            "encoding":{
+                "text":{"field":"count_number","type":"quantitative"},
+                "color":{"value":"black"}
+        }
     }
     ]
 }

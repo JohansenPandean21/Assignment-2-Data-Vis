@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json", 
   "title": "Melbourne Housing Price Per Metre Square",
   "width": "container",
-  "height": 400,
+  "height": 500,
   "data":
   {
     "url": "https://raw.githubusercontent.com/JohansenPandean21/Assignment-2-Data-Vis/main/js/melb_new_sub_update.json",
@@ -52,7 +52,7 @@
                 "domain" : [1000,2000,3000,4000,5000,6000],
                 "range" : ["#c6dbef", "#9ecae1", "#6baed6", "#4292c6","#2171b5","#084594"]
               },
-              "legend": {"format": ".3s"}
+              "legend": {"format": ".1s"}
           },
         
             "tooltip": [
@@ -95,5 +95,18 @@
       }
     }                      
     
-  ]
+  ],
+  "config":{
+    "legend": {
+      "titleFontSize": 10,
+      "labelFontSize": 8,
+      "orient": "none",
+      "direction": "horizontal",
+      "gradientHorizontalMaxLength": 2,
+      "legendX": 590,
+      "legendY": 10,
+      "titleAnchor": "start",
+      "titleOrient": "left"
+  }
+  }
 }

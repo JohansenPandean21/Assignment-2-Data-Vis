@@ -3,11 +3,12 @@
   "data": {
     "url": "https://raw.githubusercontent.com/JohansenPandean21/Assignment-2-Data-Vis/main/Melbourne_Pricing_House.csv"
   },
-  "width": 600,
-  "height": 300,
-  "padding":5,
+  "width": "container",
+  "height": "container",
+  "padding":0,
   "title": "EVOLUTION OF UNITS SOLD",
   "layer": [
+   
     {
       "encoding": {
         "x": { "timeUnit" : "yearmonthdate",
@@ -49,11 +50,20 @@
     {
       "transform": [{"filter": {"param": "label", "empty": false}},
       {"filter":"datum.Regionname !== 'undefined'"}],
+      "encoding":{
+        "x":{
+          "field":"Date",
+          "type":"temporal"
+        },
+        "color":{"value":"black"}
+      },
       "layer": [
+        
         {
           "mark": {"type": "rule", "color": "gray"},
           "encoding": {
-            "x": {"type": "temporal", "field": "Date", "aggregate": "min"}
+            "x": {"type": "temporal", "field": "Date", "aggregate": "min"},
+            "color":{"value":"black"}
           }
         },
         {
@@ -77,7 +87,7 @@
               "mark": {"type": "text", "align": "left", "dx": 5, "dy": -5},
               "encoding": {
               "x":{"field":"Date","type":"temporal"},
-                "color": {"type": "nominal", "field": "Regionname"}
+                "color":{"value":"black"}
               }
             }
           ]
