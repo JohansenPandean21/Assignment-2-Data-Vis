@@ -1,0 +1,52 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/JohansenPandean21/Assignment-2-Data-Vis/main/Melbourne_Pricing_House.csv"
+      },
+    "width": "container",
+    "height": 300,
+    "padding":5,
+    "title": "Pie chart",
+    "params":[
+        {
+            "name":"year_select",
+            "bind":{
+                "input" : "range",
+                "min":1,
+                "max":12,
+                "step":1,
+                "name":"Year Select: "
+            }
+        }
+    ],
+    "encoding":{
+        "x":{"field":"SellerG", "type":"nominal"},
+        "y":{"field":"count_number", 
+        "type":"quantitative",
+        "title":"Property Sold"
+            },
+            "text":{"field":"count_number","type":"quantitative"}
+    },
+    "transform":[
+        {
+            "aggregate":[{"op":"count","field":"datum.No_sold", "as":"count_number"}],
+            "groupby": ["SellerG"]
+        },
+        {"calculate":"datum.Year", "as":"new_me"},
+        {"filter":"datum.count_number > 100"}
+    ],
+    "layer":[
+        {
+            "mark":"bar"
+        },
+        {
+            "mark":{
+                "type":"text",
+                "align":"right",
+                "dx":-5,
+                "stroke":"white",
+                "strokeWidth":5
+            }
+    }
+    ]
+}
