@@ -1,6 +1,6 @@
 /* Page Settings*/
 .page{ 
-    width: 1000px;
+    width: 1500px;
     background-color: white;
     margin: auto;
     padding: 10px;
@@ -13,8 +13,20 @@
 .hr3{ 
     border: 0; 
     height: 2px;
-    background-image: linear-gradient(to right, transparent, rgb(221, 221, 221), transparent);
+    background-image: linear-gradient(to right, transparent, rgb(84, 86, 209), transparent);
     padding-top: 5px;
+}
+
+/* PADDING */
+
+.l-pad{
+    padding: 20px;
+    margin:20px;
+
+}
+/* BACKGROUND COLOUR */
+.grad{
+    background-color: whitesmoke;
 }
 /* ---------------------------------------------------------------------- */
 /* Title Heading*/
@@ -23,26 +35,27 @@ h1{
     font-size: 45px;
     font-weight: bolder;
     text-align: center;
+    padding-top:30px;
     margin: auto;
     width:100%;
-    border: 1 px solid black;
-    background-color:#034138 ;
-    border: 4mm ridge rgba(247, 163, 85, 0.6);
+    height:100px;
+    background-size: 500px ;
+    background-color:#2e2e2e ;
+    
 }
 
 h2{
     font-family: "Noto Sans Display";
     font-size: 20px;
     margin: auto;
-    width:50%;
+    width:100%;
     text-align: center;
-    background-color: aquamarine;
-    border-style: inset;
-    border-color: rebeccapurple;
+    
 }
 
 body{
-    background-color : rgb(176, 230, 185);
+    background-color: rgb(245, 245, 245);
+    
 }
 
 /* ---------------------------------------------------------------------- */
@@ -64,6 +77,15 @@ body{
 /* Background for paragraph*/
 #p1{
     background-color: bisque;
+}
+
+.text-box {
+    text-align:justify;
+    border-radius:4px;
+    font-size:25px;
+    padding:50px;
+    margin:50px;
+
 }
 
 /* ---------------------------------------------------------------------- */
