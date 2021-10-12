@@ -6,7 +6,6 @@
     "width": "container",
     "height": 300,
     "padding":5,
-    "title": "Pie chart",
     "encoding":{
         "x":{"field":"SellerG", "type":"nominal"},
         "y":{"field":"count_number", 

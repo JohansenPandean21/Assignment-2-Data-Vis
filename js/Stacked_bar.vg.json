@@ -1,6 +1,5 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json", 
-    "title": "HAVENT THINK ON A GOOD TITLE YET",
     "width": "container",
     "height": 300,
     "padding": 0,
@@ -30,7 +29,7 @@
                     "July",
                     "August",
                     "September",
-                    "Ocotber",
+                    "October",
                     "November",
                     "December"
                 ],

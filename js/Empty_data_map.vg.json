@@ -1,6 +1,5 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json", 
-  "title": "Melbourne Housing Price Per Metre Square",
   "width": "container",
   "height": 400,
   "data":
@@ -103,7 +102,7 @@
       "orient": "none",
       "direction": "horizontal",
       "gradientHorizontalMaxLength": 2,
-      "legendX": 1000,
+      "legendX": 800,
       "legendY": 10,
       "titleAnchor": "start",
       "titleOrient": "left"

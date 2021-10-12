@@ -6,7 +6,6 @@
   "width": "container",
   "height": 420,
   "padding":10,
-  "title": "EVOLUTION OF UNITS SOLD",
   
   "layer": [
    
@@ -88,7 +87,7 @@
               "mark": {"type": "text", "align": "left", "dx": 5, "dy": -5},
               "encoding": {
               "x":{"field":"Date","type":"temporal"},
-                "color":{"value":"black"}
+                "color":{"value":"green"}
               }
             }
           ]
