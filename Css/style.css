@@ -58,6 +58,11 @@ body{
     
 }
 
+p{
+    text-align:justify;
+    line-height: 1.5;
+}
+
 /* ---------------------------------------------------------------------- */
 .pure-g{
     margin-bottom: 25px;
