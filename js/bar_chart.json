@@ -7,23 +7,12 @@
     "height": 300,
     "padding":5,
     "title": "Pie chart",
-    "params":[
-        {
-            "name":"year_select",
-            "bind":{
-                "input" : "range",
-                "min":1,
-                "max":12,
-                "step":1,
-                "name":"Year Select: "
-            }
-        }
-    ],
     "encoding":{
         "x":{"field":"SellerG", "type":"nominal"},
         "y":{"field":"count_number", 
         "type":"quantitative",
-        "title":"Property Sold"
+        "title":"Property Sold",
+        "axis":null
             }
     },
     "transform":[
@@ -42,13 +31,23 @@
             "mark":{
                 "type":"text",
                 "align":"right",
-                "dx":2,
+                "dx":10,
+                "dy":-5,
                 "strokeWidth":5
             },
             "encoding":{
                 "text":{"field":"count_number","type":"quantitative"},
-                "color":{"value":"black"}
+                "color":{
+                  "condition":{
+                    "test":"datum['SellerG'] == 'Jellis'|| datum['SellerG'] == 'Nelson'", "value": "red"
+                  },
+                  "value":"black"
+                }
         }
     }
-    ]
+    ],
+    "config":{
+        "background":"#f5f5f5",
+        "style":{"cell":{"stroke":"transparent"}}
+    }
 }

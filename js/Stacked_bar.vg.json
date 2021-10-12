@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json", 
     "title": "HAVENT THINK ON A GOOD TITLE YET",
     "width": "container",
-    "height": 200,
+    "height": 300,
     "padding": 0,
     "data":{
         "url":"https://raw.githubusercontent.com/JohansenPandean21/Assignment-2-Data-Vis/main/Melbourne_Pricing_House.csv"
@@ -93,7 +93,9 @@
             "legendY": 350,
             "titleAnchor": "start",
             "titleOrient": "left"
-        }
+        },
+        "background":"#f5f5f5",
+        "style":{"cell":{"stroke":"transparent"}}
 
     }
   

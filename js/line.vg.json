@@ -4,8 +4,8 @@
     "url": "https://raw.githubusercontent.com/JohansenPandean21/Assignment-2-Data-Vis/main/Melbourne_Pricing_House.csv"
   },
   "width": "container",
-  "height": "container",
-  "padding":0,
+  "height": 420,
+  "padding":10,
   "title": "EVOLUTION OF UNITS SOLD",
   
   "layer": [
@@ -95,7 +95,23 @@
         }
       ]
     }
-  ]
+  ],
+  "config":{
+    "legend": {
+      "titleFontSize": 15,
+      "labelFontSize": 13,
+      "orient": "none",
+      "direction": "horizontal",
+      "columns":3,
+      "columnPadding":20,
+      "legendX": 10,
+      "legendY": 500,
+      "titleAnchor": "start",
+      "titleOrient": "left"
+  },
+  "background":"#f5f5f5",
+        "style":{"cell":{"stroke":"transparent"}}
+  }
 }
 
 

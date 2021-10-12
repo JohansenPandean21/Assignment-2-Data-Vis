@@ -2,6 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json", 
     "width": "container",
     "height":400,
+    "padding":10,
     "title": "Melbourne Housing Price Based on Year Built",
     "data":{
         "url":"https://raw.githubusercontent.com/JohansenPandean21/Assignment-2-Data-Vis/main/Melbourne_Pricing_House.csv"
@@ -133,5 +134,21 @@
                 }
             }
         }
-    ]
+    ],
+    "config":{
+        "background":"#f5f5f5",
+        "style":{"cell":{"stroke":"transparent"}},
+        "legend": {
+            "titleFontSize": 15,
+            "labelFontSize": 13,
+            "orient": "none",
+            "direction": "horizontal",
+            "columns":3,
+            "columnPadding":20,
+            "legendX": 10,
+            "legendY": 500,
+            "titleAnchor": "start",
+            "titleOrient": "left"
+        }
+    }
 }
