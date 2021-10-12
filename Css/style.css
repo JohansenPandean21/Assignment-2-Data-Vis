@@ -50,8 +50,16 @@ h2{
     margin: auto;
     width:100%;
     text-align: center;
-    
 }
+
+h3{
+    font-family:"Oswald";
+    font-size:30px;
+    margin: auto;
+    width:100%;
+    text-align:center;
+}
+
 
 body{
     background-color: rgb(245, 245, 245);
