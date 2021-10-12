@@ -58,8 +58,7 @@
             "Width":300,
             "encoding":{
                 "color":{"field":"Type",
-                    "type":"nominal",
-                    "legend": {"labelExpr": "{'h': 'House', 't':'Townhouse', 'u' :'Unit'}[datum.label]"}},
+                    "type":"nominal"},
                 
                 "tooltip":[
                     {"field":"No_sold","type":"quantitative","aggregate":"sum", "title": "Total Units Sold", "format":","},

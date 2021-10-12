@@ -16,7 +16,7 @@
           "transform":[
               {"calculate": "'Data is not available in ' + datum.properties.LOC_NAME", "as":"note" }
           ],
-          "mark": {"type": "geoshape", "color":"#dddddd", "stroke":"#7c7a7a"},
+          "mark": {"type": "geoshape", "color":"#ffffff", "stroke":"#bdbdbd"},
           "encoding":{
               "tooltip":{
                   "field":"note"
@@ -35,9 +35,9 @@
                       "fields": ["Avg_Price_Land", "Month","Suburb","Distance","Type"]
                   }
               },
-              
-            {"filter": "datum.Distance > Dist_range"},
+              {"filter": "datum.Distance > Dist_range"},
             {"filter": "unit_type == null || datum.Type == unit_type"}
+            
           ],
 
           "mark": {"type": "geoshape"},
@@ -53,10 +53,11 @@
               },
               "legend": {"format": ".1s"}
           },
+          
         
             "tooltip": [
             {"field" : "Suburb", "type":"nominal"},
-            {"field": "Avg_Price_Land", "type": "quantitative","format": "$.4s","title" : "Price Room Average in $"},
+            {"field": "Avg_Price_Land", "type": "quantitative","format": "$.4s","title" : "Average Land Price per sqm ($)"},
             {"field": "Distance", "type": "quantitative","title": "Distance From CBD in Km"}
           ]
           } 
@@ -69,9 +70,9 @@
         "input": "select",
         "options":[
           null,
-          "h",
-          "t",
-          "u"
+          "House",
+          "Townhouse",
+          "Unit"
         ],
         "labels":[
           "Show All",
@@ -96,18 +97,19 @@
     
   ],
   "config":{
-    "legend": {
+      "legend": {
       "titleFontSize": 10,
       "labelFontSize": 8,
-      "orient": "none",
-      "direction": "horizontal",
-      "gradientHorizontalMaxLength": 2,
-      "legendX": 800,
-      "legendY": 10,
       "titleAnchor": "start",
-      "titleOrient": "left"
+      "titleOrient": "left",
+      "direction": "horizontal",
+      "orient":"none",
+      "legendX": 800,
+      "gradientHorizontalMaxLength": 2,
+      "legendY": 10
   },
   "background":"#f5f5f5",
-        "style":{"cell":{"stroke":"transparent"}}
-  }
+  "style":{"cell":{"stroke":"transparent"}
+  }}
+  
 }

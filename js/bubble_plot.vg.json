@@ -56,6 +56,7 @@
         "x":{
             "field" : "YearBuilt",
             "type":"temporal",
+            "title":"Year Built",
             "axis":{"tickCount" : 6},
             "scale":{"domain":[{"year":1800},{"year":2020}]}
             
@@ -63,19 +64,26 @@
     },
 
     "layer":[
-        {
-            "selection":{
-                "legend_bind":{
-                    "type":"multi",
-                    "fields":["Type"],
-                    "bind": {"legend":"dblclick"}
-                },
-                "paintbrush":{
-                    "type":"point",
-                    "fields":"Type",
-                    "on":"mousemove",
-                    "nearest":true               }
+        
+        
+        {"params":[
+            {
+                "name":"legend_bind",
+                "select":{"type":"point","fields":["Type"]},
+                "bind":{"legend":"dblclick"}
             },
+            {
+                "name":"paintbrush",
+                "select":{"type":"point","fields":["Type"],"on":"mousemove","nearest":true}
+                
+            },
+            {
+                "name":"grid",
+                "select":"interval",
+
+                "bind":"scales"
+            }
+        ],
             "mark":"circle",
             "encoding":{
                 "size":{
@@ -91,16 +99,21 @@
                 "color":{
                     
                     "condition":{
-                        "selection":"paintbrush",
+                        "param":"paintbrush",
                         "field":"Type",
-                        "type":"nominal"    
+                        "type":"nominal",
+                        "scale":{
+                            "type":"threshold",
+                            "domain":["House","Townhouse","Unit"],
+                            "range":["#1280FD","#F6810C","#F60CD7"]
+                        }
                     },
                     "value":"grey"
                     
                       
                 },
                 "opacity": { 
-                    "condition": {"selection": "legend_bind", "value": 0.6},
+                    "condition": {"param": "legend_bind", "value": 0.6},
                     "value": 0.1
                     
                 },
