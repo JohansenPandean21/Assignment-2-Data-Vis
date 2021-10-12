@@ -1,6 +1,6 @@
 /* Page Settings*/
 .page{ 
-    width: 1500px;
+    width: 1250px;
     background-color: white;
     margin: auto;
     padding: 10px;
@@ -58,9 +58,13 @@ body{
     
 }
 
-p{
+p{  
+    font-family:'Mukta';
+    font-size: 20px;
+    padding:10px;
     text-align:justify;
     line-height: 1.5;
+    text-indent:50px;
 }
 
 /* ---------------------------------------------------------------------- */
