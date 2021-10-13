@@ -98,16 +98,21 @@
   ],
   "config":{
       "legend": {
-      "titleFontSize": 10,
-      "labelFontSize": 8,
+      "titleFontSize": 12,
+      "labelFontSize": 10,
       "titleAnchor": "start",
-      "titleOrient": "left",
+      "titleOrient": "top",
       "direction": "horizontal",
       "orient":"none",
       "legendX": 800,
       "gradientHorizontalMaxLength": 2,
       "legendY": 10
   },
+  "font":"Mukta",
+  "axis": {
+    "labelFontSize": 13,
+    "titleFontSize": 15
+},
   "background":"#f5f5f5",
   "style":{"cell":{"stroke":"transparent"}
   }}

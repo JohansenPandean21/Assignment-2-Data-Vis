@@ -44,10 +44,14 @@
         "x":{"field":"No_sold",
             "type":"quantitative",
             "aggregate":"sum",
-            "title": "Unit Sold"
+            "title": "Unit Sold",
+            "scale":{
+                "domain":[0,4600]
+            }
         },
         "y":{"field":"Method",
-            "type":"nominal"
+            "type":"nominal",
+            "title":"Selling Method"
         }
     },
     
@@ -58,7 +62,12 @@
             "Width":300,
             "encoding":{
                 "color":{"field":"Type",
-                    "type":"nominal"},
+                    "type":"nominal",
+                    "scale":{
+                        "type":"threshold",
+                        "domain":["House","Townhouse","Unit"],
+                        "range":["#1280FD","#F6810C","#F60CD7"]
+                    }},
                 
                 "tooltip":[
                     {"field":"No_sold","type":"quantitative","aggregate":"sum", "title": "Total Units Sold", "format":","},
@@ -67,21 +76,30 @@
                 ]
          
             }
+        },
+        {
+            "mark":{
+                "type":"text",
+                "dx":12
+            },
+            "encoding":{
+                "text":{
+                    "field":"No_sold",
+                    "type":"quantitative",
+                    "aggregate":"sum"
+                }
+
+            }
         }
 
     ],
     "config": {
-        "font": "Space Grotesk",
+        
         "axis": {
             "labelFontSize": 13,
             "titleFontSize": 15
         },
-        "title": {
-            "anchor": "middle",
-            "fontSize": 16,
-            "font": "Segoe UI",
-            "fontWeight": 600
-        },
+
         "legend": {
             "titleFontSize": 15,
             "labelFontSize": 13,
@@ -92,6 +110,8 @@
             "titleAnchor": "start",
             "titleOrient": "left"
         },
+        "font":"Mukta",
+        
         "background":"#f5f5f5",
         "style":{"cell":{"stroke":"transparent"}}
 

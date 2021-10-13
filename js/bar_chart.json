@@ -5,9 +5,16 @@
       },
     "width": "container",
     "height": 300,
-    "padding":5,
+    "padding":0,
     "encoding":{
-        "x":{"field":"SellerG", "type":"nominal"},
+        "x":{
+            "field":"SellerG", 
+            "type":"nominal",
+            "title":"Agencies Name",
+            "axis":{
+                "labelAngle":51
+            }
+        },
         "y":{"field":"count_number", 
         "type":"quantitative",
         "title":"Property Sold",
@@ -19,12 +26,13 @@
             "aggregate":[{"op":"count","field":"datum.No_sold", "as":"count_number"}],
             "groupby": ["SellerG"]
         },
-        {"calculate":"datum.Year", "as":"new_me"},
         {"filter":"datum.count_number > 100"}
     ],
     "layer":[
         {
-            "mark":"bar"
+            "mark":{
+                "type":"bar"
+            }
         },
         {
             "mark":{
@@ -46,6 +54,11 @@
     }
     ],
     "config":{
+        "axis": {
+            "labelFontSize": 13,
+            "titleFontSize": 15
+        },
+        "font":"Mukta",
         "background":"#f5f5f5",
         "style":{"cell":{"stroke":"transparent"}}
     }
