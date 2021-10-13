@@ -75,6 +75,17 @@ p{
     text-indent:50px;
 }
 
+.end { 
+     
+        font-family:'Mukta';
+        font-size: 20px;
+        padding:10px;
+        text-align:justify;
+        line-height: 1.5;
+        text-indent: 0px;
+        
+    
+}
 /* ---------------------------------------------------------------------- */
 .pure-g{
     margin-bottom: 25px;
