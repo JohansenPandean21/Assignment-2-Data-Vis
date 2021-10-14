@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json", 
   "width": "container",
-  "height": 400,
+  "height": 600,
   "data":
   {
     "url": "https://raw.githubusercontent.com/JohansenPandean21/Assignment-2-Data-Vis/main/js/melb_new_sub_update.json",
@@ -104,7 +104,7 @@
       "titleOrient": "top",
       "direction": "horizontal",
       "orient":"none",
-      "legendX": 800,
+      "legendX": 700,
       "gradientHorizontalMaxLength": 2,
       "legendY": 10
   },

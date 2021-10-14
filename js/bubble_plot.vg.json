@@ -72,11 +72,7 @@
                 "select":{"type":"point","fields":["Type"]},
                 "bind":{"legend":"dblclick"}
             },
-            {
-                "name":"paintbrush",
-                "select":{"type":"point","fields":["Type"],"on":"mousemove","nearest":true}
-                
-            },
+            
             {
                 "name":"grid",
                 "select":"interval",
@@ -98,22 +94,21 @@
                 },
                 "color":{
                     
-                    "condition":{
-                        "param":"paintbrush",
+                    
+                        
                         "field":"Type",
                         "type":"nominal",
                         "scale":{
                             "type":"threshold",
                             "domain":["House","Townhouse","Unit"],
-                            "range":["#1280FD","#F6810C","#F60CD7"]
+                            "range":["#91D6F3","#EEB312","#ED91F3"]
                         }
-                    },
-                    "value":"grey"
+                    
                     
                       
                 },
                 "opacity": { 
-                    "condition": {"param": "legend_bind", "value": 0.6},
+                    "condition": {"param": "legend_bind", "value": 0.8},
                     "value": 0.1
                     
                 },
