@@ -40,7 +40,7 @@
                     "type":"threshold",
                   "domain":["Eastern Metropolitan","Northern Metropolitan","South-Eastern Metropolitan", "Southern Metropolitan",
                 "Western Metropolitan"],
-                "range":["#08FFAD", "#0066CC", "#FFCC99","#C48DF5","#999900"]
+                "range":["#7C725D", "#0066CC", "#1F6F75","#C48DF5","#F27DB3"]
                 }
             },
               "opacity": {
