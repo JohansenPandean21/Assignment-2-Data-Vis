@@ -31,7 +31,8 @@
     "layer":[
         {
             "mark":{
-                "type":"bar"
+                "type":"bar",
+                "stroke":"black"
             }
         },
         {
