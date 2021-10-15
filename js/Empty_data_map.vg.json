@@ -14,15 +14,17 @@
   "layer": [
       {
           "transform":[
-              {"calculate": "'Data is not available in ' + datum.properties.LOC_NAME", "as":"note" }
+            
+              {"calculate": "'Data is not available in ' + datum.properties.LOC_NAME", "as":"note"}
           ],
-          "mark": {"type": "geoshape", "color":"#ffffff", "stroke":"#bdbdbd"},
+          "mark": {"type": "geoshape", "color":"#ffffff", "stroke":"#000000"},
           "encoding":{
               "tooltip":{
                   "field":"note"
               }
           }
       },
+      
       {
           "transform": [
               {

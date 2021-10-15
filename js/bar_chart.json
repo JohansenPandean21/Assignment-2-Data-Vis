@@ -46,7 +46,7 @@
                 "text":{"field":"count_number","type":"quantitative"},
                 "color":{
                   "condition":{
-                    "test":"datum['SellerG'] == 'Jellis'|| datum['SellerG'] == 'Nelson'", "value": "red"
+                    "test":"datum['SellerG'] == 'Jellis'|| datum['SellerG'] == 'Nelson'", "value": "#FF08CD"
                   },
                   "value":"black"
                 }
