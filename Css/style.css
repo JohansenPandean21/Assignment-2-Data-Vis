@@ -53,13 +53,18 @@ h2{
 }
 
 h3{
-    font-family:"Oswald";
-    font-size:30px;
+    
+    font-family:"Mukta";
+    font-size:32px;
     margin: auto;
     width:100%;
     text-align:center;
+    font-weight: 1500;
 }
 
+.bold{
+    font-weight:20;
+}
 
 
 body{
